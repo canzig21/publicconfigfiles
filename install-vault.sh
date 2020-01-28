@@ -13,7 +13,7 @@ VAULT_DATA_DIR=/opt/vault/data
 VAULT_TLS_DIR=/opt/vault/tls
 VAULT_ENV_VARS=${VAULT_CONFIG_DIR}/vault.conf
 VAULT_PROFILE_SCRIPT=/etc/profile.d/vault.sh
-VAULT_LOG_LEVEL=debug
+VAULT_LOG_LEVEL=trace
 
 echo "Downloading Vault ${VAULT_VERSION}"
 [ 200 -ne $(curl --write-out %{http_code} --silent --output /tmp/${VAULT_ZIP} ${VAULT_URL}) ] && exit 1
