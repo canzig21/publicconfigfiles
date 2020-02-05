@@ -1,0 +1,19 @@
+[Unit]
+Description="HashiCorp Consul - A service mesh solution"
+Documentation=https://www.consul.io/
+Requires=network-online.target
+After=network-online.target
+ConditionFileNotEmpty=/etc/consul.d/consul_config.json
+[Service]
+Type=notify
+User=consul
+Group=consul
+ExecStart=/opt/consul/bin/consul agent -config-dir /etc/consul.d -data-dir /opt/consul
+ExecReload=/opt/consul/bin/consul reload
+KillMode=process
+Restart=on-failure
+TimeoutSec=300s
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target
