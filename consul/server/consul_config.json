@@ -1,0 +1,20 @@
+{
+  "bootstrap_expect": 3,
+  "client_addr": "0.0.0.0",
+  "datacenter": "us-east-1",
+  "retry_join": [
+    "provider=aws region=us-east-1 tag_key=consul-servers tag_value=auto-join"
+  ],
+  "server": true,
+  "autopilot": {
+    "cleanup_dead_servers": true,
+    "last_contact_threshold": "200ms",
+    "max_trailing_logs": 250,
+    "server_stabilization_time": "10s",
+    "redundancy_zone_tag": "az",
+    "disable_upgrade_migration": false,
+    "upgrade_version_tag": ""
+  },
+  "ui": true,
+  "encrypt": "SixJOId24ZvZSnsPXYZk+O03+PSuHa846UXKFlvfU2s="  
+}
